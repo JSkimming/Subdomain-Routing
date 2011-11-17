@@ -1,0 +1,44 @@
+# Visual Studio user / settings files
+*.user
+*.vspscc
+*.suo
+*.vssscc
+
+# Build output files
+bin/
+obj/
+_bin_deployableAssemblies/
+
+# Packages
+packages/
+
+# Test output files
+TestResults/
+
+# Resharper files
+*.ReSharper
+_ReSharper.*/
+
+# NCrunch settings
+*.crunchsolution.cache
+*.crunchsolution.local.xml
+*.crunchproject.local.xml
+
+# dotCover files
+*.dotCover
+
+# Windows files
+*.db
+
+# Log files
+*.svclog
+*.log
+
+
+# Misc files
+UpgradeLog.XML
+_UpgradeReport_Files/
+AddIns/
+
+# Git merge files
+*.orig
