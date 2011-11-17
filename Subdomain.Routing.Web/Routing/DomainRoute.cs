@@ -172,9 +172,8 @@ namespace Subdomain.Routing.Routing
         private RouteValueDictionary RemoveDomainTokens(RouteValueDictionary values)
         {
             Match tokenMatch = _tokenRegex.Match(Domain);
-            for (int i = 0; i < tokenMatch.Groups.Count; i++)
+            foreach (Group group in tokenMatch.Groups)
             {
-                Group group = tokenMatch.Groups[i];
                 if (group.Success)
                 {
                     string key = group.Value.Replace("{", "").Replace("}", "");
