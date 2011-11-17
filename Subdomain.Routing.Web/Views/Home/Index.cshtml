@@ -8,9 +8,12 @@
 
 <html>
     <head>
-        <title>Home</title>
+        <title>Home Index</title>
     </head>
     <body>
-        <div>Home</div>
+        <div><h1>Home Index</h1></div>
+        <div><h2>@ViewData["Message"]</h2></div>
+        @Html.ActionLink("Test1", "Index", "Test1")
+        @Html.ActionLink("Test 1 Another", "Another", "Test1")
     </body>
 </html>

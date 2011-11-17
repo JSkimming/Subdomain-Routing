@@ -1,0 +1,19 @@
+﻿@model dynamic
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Test 1 index</title>
+    </head>
+    <body>
+        <div><h1>Test 1 index</h1></div>
+        <div><h2>@ViewData["Message"]</h2></div>
+        @Html.ActionLink("Another", "Another")
+        @Html.ActionLink("Home", "Index", "Home")
+    </body>
+</html>
