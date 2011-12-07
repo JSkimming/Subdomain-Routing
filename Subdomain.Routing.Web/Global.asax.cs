@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 using Subdomain.Routing.Routing;
 
@@ -22,10 +18,28 @@ namespace Subdomain.Routing
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.Add("DomainRoute", new DomainRoute(
+            routes.Add("DomainTenantRoute", new DomainRoute(
                 "{tenant}.testdomin.com",     // Domain with parameters
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional, tenant = UrlParameter.Optional}  // Parameter defaults
+            ));
+
+            routes.Add("DomainTenantCatalogueRoute", new DomainRoute(
+                "{tenant}-cat_{catalogue}.testdomin.com",     // Domain with parameters
+                "{controller}/{action}/{id}", // URL with parameters
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional, tenant = UrlParameter.Optional, catalogue = UrlParameter.Optional }  // Parameter defaults
+            ));
+
+            routes.Add("DomainTenantStyleRoute", new DomainRoute(
+                "{tenant}-style_{style}.testdomin.com",     // Domain with parameters
+                "{controller}/{action}/{id}", // URL with parameters
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional, tenant = UrlParameter.Optional, style = UrlParameter.Optional }  // Parameter defaults
+            ));
+
+            routes.Add("DomainTenantCatalogueStyleRoute", new DomainRoute(
+                "{tenant}-cat_{catalogue}-style_{style}.testdomin.com",     // Domain with parameters
+                "{controller}/{action}/{id}", // URL with parameters
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional, tenant = UrlParameter.Optional, catalogue = UrlParameter.Optional, style = UrlParameter.Optional }  // Parameter defaults
             ));
 
             routes.MapRoute(

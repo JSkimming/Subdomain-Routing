@@ -4,18 +4,15 @@ namespace Subdomain.Routing.Controllers
 {
     public class Test1Controller : Controller
     {
-        //
-        // GET: /Test1/
-
-        public ActionResult Index(string tenant)
+        public ActionResult Index(string tenant, string catalogue, string style)
         {
-            ViewData["Message"] = string.Format("And the tenant is '{0}'.", tenant);
+            ViewData["Message"] = string.Format("tenant = '{0}', catalogue = '{1}', style = '{2}'.", tenant, catalogue, style);
             return View();
         }
 
-        public ActionResult Another(string tenant)
+        public ActionResult Another(string tenant, string catalogue, string style)
         {
-            ViewData["Message"] = string.Format("And the tenant is '{0}'.", tenant);
+            ViewData["Message"] = string.Format("tenant = '{0}', catalogue = '{1}', style = '{2}'.", tenant, catalogue, style);
             return View();
         }
     }
