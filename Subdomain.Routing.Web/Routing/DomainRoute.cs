@@ -95,9 +95,10 @@ namespace Subdomain.Routing.Routing
             string requestDomain = httpContext.Request.Headers["host"];
             if (!string.IsNullOrWhiteSpace(requestDomain))
             {
-                if (requestDomain.IndexOf(":", StringComparison.Ordinal) > 0)
+                var portIndex = requestDomain.IndexOf(":", StringComparison.Ordinal);
+                if (portIndex > 0)
                 {
-                    requestDomain = requestDomain.Substring(0, requestDomain.IndexOf(":", StringComparison.Ordinal));
+                    requestDomain = requestDomain.Substring(0, portIndex);
                 }
             }
             else
